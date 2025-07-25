@@ -11,3 +11,6 @@ def mask_account_card(card_type_and_number: str) -> str:
         numbers_mask=get_mask_card_number(numbers)
         return card_type_and_number.replace(numbers,"")+numbers_mask
 
+
+def get_date(date: str) -> str:
+    return date[8:10]+"."+date[5:7]+"."+date[:4]
