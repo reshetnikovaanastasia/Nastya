@@ -1,7 +1,4 @@
-import datetime
-
-
-def filter_by_state(list_data_dictionaries: list[dict], state = 'EXECUTED') -> list[dict]:
+def filter_by_state(list_data_dictionaries: list[dict], state: str = 'EXECUTED') -> list[dict]:
     """Принимает список словарей и опционально значение для ключа state (по умолчанию 'EXECUTED'). Функция
     возвращает новый список словарей, содержащий только те словари, у которых ключ 'state' соответствует
     указанному значению"""

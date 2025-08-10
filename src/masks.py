@@ -1,5 +1,6 @@
 from typing import Union
 
+
 def get_mask_card_number(card_number: Union[str, int]) -> str:
     """Функция принимает на вход номер карты и возвращает ее маску.
     Номер карты замаскирован и отображается в формате XXXX XX** **** XXXX, где X — это цифра номера.
