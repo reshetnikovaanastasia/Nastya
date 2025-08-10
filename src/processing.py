@@ -1,8 +1,7 @@
-from typing import Any
 import datetime
 
 
-def filter_by_state(list_data_dictionaries: Any, state = 'EXECUTED') -> Any:
+def filter_by_state(list_data_dictionaries: list[dict], state = 'EXECUTED') -> list[dict]:
     """Принимает список словарей и опционально значение для ключа state (по умолчанию 'EXECUTED'). Функция
     возвращает новый список словарей, содержащий только те словари, у которых ключ 'state' соответствует
     указанному значению"""
@@ -13,8 +12,8 @@ def filter_by_state(list_data_dictionaries: Any, state = 'EXECUTED') -> Any:
     return new_list_data
 
 
-def sort_by_date(list_data_dictionaries: Any, data_key = "date", direction = True) -> Any:
+def sort_by_date(list_data_dictionaries: list[dict], sorting: bool = True) -> list[dict]:
     """Принимает список словарей и необязательный параметр, задающий порядок сортировки (по умолчанию — убывание).
     Функция должна возвращать новый список, отсортированный по дате (date)"""
-    return sorted(list_data_dictionaries, key = lambda x: datetime.datetime.strptime(x[data_key],
-                '%Y-%m-%dT%H:%M:%S.%f'), reverse = direction)
+    sorted_state = sorted(list_data_dictionaries, key=lambda x: x["date"], reverse=sorting)
+    return sorted_state
