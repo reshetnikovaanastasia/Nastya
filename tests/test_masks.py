@@ -1,6 +1,5 @@
 import pytest
 
-
 from src.masks import get_mask_card_number, get_mask_account
 
 
@@ -15,7 +14,7 @@ def test_get_mask_card_number_length():
     assert get_mask_card_number("Nastya") == "Ошибка ввода"
 
 
-@pytest.mark.parametrize("account, expected",[(123456, "**3456"),(123, "Ошибка ввода"),("123456789","Ошибка ввода"),("","")])
-def test_get_mask_account(account,expected):
+@pytest.mark.parametrize("account, expected", [(12345678910111213145, "**3145"),
+                                               (123, "Ошибка ввода"), ("123456789", "Ошибка ввода"), ("", "")])
+def test_get_mask_account(account, expected):
     assert get_mask_account(account) == expected
-

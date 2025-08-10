@@ -22,7 +22,7 @@ def get_mask_account(account_number: Union[str, int]) -> str:
       73654108430135874305  # входной аргумент
       **4305  # выход функции"""
     str_account_number = str(account_number)
-    if len(str_account_number) == 6 and str_account_number.isdigit():
+    if len(str_account_number) == 20 and str_account_number.isdigit():
         return "**" + str_account_number[-4:]
     elif str_account_number == "":
         return ""
