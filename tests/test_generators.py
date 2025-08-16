@@ -26,14 +26,15 @@ def test_transaction_descriptions(transactions):
     assert next(descriptions) == "Перевод организации"
 
 
-def test_card_number_generator():
+@pytest.mark.parametrize("start, end", [(11111111, 11111113)])
+def test_card_number_generator(start, end):
     a = card_number_generator(1, 5)
     assert next(a) == "0000 0000 0000 0001"
     assert next(a) == "0000 0000 0000 0002"
     assert next(a) == "0000 0000 0000 0003"
     assert next(a) == "0000 0000 0000 0004"
     assert next(a) == "0000 0000 0000 0005"
-    b = card_number_generator(11111111, 11111113)
+    b = card_number_generator(start, end)
     assert next(b) == "0000 0000 1111 1111"
     assert next(b) == "0000 0000 1111 1112"
     assert next(b) == "0000 0000 1111 1113"
