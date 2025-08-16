@@ -78,12 +78,22 @@ transactions = (
     ]
 )
 
+
 def filter_by_currency(transactions, selected_currency):
     for transaction in transactions:
         if transaction["operationAmount"]["currency"]["code"] == selected_currency:
             yield transaction
 
 
-usd_transactions = filter_by_currency(transactions, "USD")
-for _ in range(3):
-    print(next(usd_transactions))
+# usd_transactions = filter_by_currency(transactions, "USD")
+# for _ in range(3):
+#     print(next(usd_transactions))
+
+
+def transaction_descriptions(transactions):
+    for transaction in transactions:
+        yield transaction["description"]
+
+# descriptions = transaction_descriptions(transactions)
+# for _ in range(5):
+#     print(next(descriptions))
