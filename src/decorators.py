@@ -26,7 +26,7 @@ def log(filename=None):
                         file.write(f'{time_start}\n{time_stop}\n{result_message}\n')
             except Exception as e:
                 time_stop = f'{function.__name__} stop-{datetime.now()}'
-                result_message = f'{function.__name__} error: {type(e).__name__}.Inputs: {args}, {kwargs}'
+                result_message = f'{function.__name__} error: {e}. Inputs: {args}, {kwargs}'
                 if filename is None:
                     print(f'{time_start}\n{time_stop}\n{result_message}')
                 else:
@@ -36,11 +36,3 @@ def log(filename=None):
         return wrapper
 
     return log_decorator
-
-
-@log(filename="mylog.txt")
-def my_function(x, y):
-    return x + y
-
-
-my_function(1, 2)
