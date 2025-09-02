@@ -19,5 +19,5 @@ def load_transaction_data(file_path):
         return []
 
 
-# Необходимо указать абсолютный путь к файлу
-print(load_transaction_data('/data/operations.json'))
+# Необходимо указать абсолютный путь к файлу для корректной работы
+print(load_transaction_data('C:/Users/Anastasiia/PycharmProjects/Nastya/data/operations.json'))
