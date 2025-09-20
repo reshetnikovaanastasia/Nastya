@@ -1,4 +1,4 @@
-from unittest.mock import patch, Mock
+from unittest.mock import Mock, patch
 
 from src.external_api import get_transaction_amount_rub
 
@@ -16,12 +16,13 @@ def test_rub_transaction_returns_same_amount(mock_request):
     assert get_transaction_amount_rub(transaction) == 100.0
     mock_request.assert_not_called()
 
+
 @patch('requests.request')
 def test_external_api(mock_request):
-    mock_response=Mock()
-    mock_response.json.return_value={'success': True, 'query': {'from': 'USD', 'to': 'RUB', 'amount': 8221.37},
-                                     'info': {'timestamp': 1757774827, 'rate': 83.75163},
-                                     'date': '2025-09-13', 'result': 688553.138333}
+    mock_response = Mock()
+    mock_response.json.return_value = {'success': True, 'query': {'from': 'USD', 'to': 'RUB', 'amount': 8221.37},
+                                       'info': {'timestamp': 1757774827, 'rate': 83.75163},
+                                       'date': '2025-09-13', 'result': 688553.138333}
     transaction = {
         "id": 939719570,
         "state": "EXECUTED",
