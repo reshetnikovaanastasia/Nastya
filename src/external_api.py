@@ -23,5 +23,5 @@ def get_transaction_amount_rub(transaction):
         url = f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from=EUR&amount={amount}"
     response = requests.request("GET", url, headers=headers, data=payload)
     data = response.json()
-    status_code = response.status_code
+    # status_code = response.status_code
     return float(data['result'])
