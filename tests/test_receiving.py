@@ -21,7 +21,6 @@ def test_reading_csv():
 
 
 def test_empty_file_csv():
-    """Тест пустого файла"""
     with patch('builtins.open', mock_open(read_data="id;amount;date;description\n")):
         with patch('csv.DictReader') as mock_reader:
             mock_reader.return_value = []  # Пустой список
@@ -32,7 +31,6 @@ def test_empty_file_csv():
 
 
 def test_reading_excel():
-    """Тест успешного чтения Excel файла"""
     # Создаем мок DataFrame
     mock_df = MagicMock()
     mock_df.to_dict.return_value = [
