@@ -24,7 +24,7 @@ if __name__ == "__main__":
     #     }
     # }))
 
-    print(load_transaction_data(r'С:\Users\Anastasiia\PycharmProjects\Nastya\data\operations.json'))
+    print(load_transaction_data(r'C:\Users\Anastasiia\PycharmProjects\Nastya\data\operations.json'))
 
     print(get_mask_card_number("7000792289606361"))
     print(get_mask_card_number(""))
