@@ -1,4 +1,4 @@
-from src.refunctions import process_bank_search, process_bank_operations
+from src.refunctions import process_bank_operations, process_bank_search
 
 
 def test_process_bank_search(transactions):
